@@ -1,4 +1,5 @@
 const puppeteer = require("puppeteer");
+const fs = require("fs-extra");
 
 class ScrapeFlow {
   browser;
@@ -10,7 +11,10 @@ class ScrapeFlow {
   submitLoginButtonKey = `[id="btn-login"]`;
   checkLoginButtonKey = `[id="signin-btn"]`;
   envScriptContent = `var env = {"username": "${process.env.USERNAME}", "password": "${process.env.PASSWORD}"};`;
-  screenshotPath = `screenshots/github-profile-${new Date().toUTCString()}.jpeg`;
+  screenshotFolder = `screenshots`;
+  screenshotPath = `${
+    this.screenshotFolder
+  }/github-profile-${new Date().toUTCString()}.jpeg`;
 
   _init = async () => {
     this.browser = await puppeteer.launch();
@@ -42,6 +46,7 @@ class ScrapeFlow {
   _checkLoginStatus = async () => {
     await this.page.waitForSelector(this.checkLoginButtonKey);
     await this.page.click(this.checkLoginButtonKey, { delay: this.delayTime });
+    await fs.ensureDir(this.screenshotFolder);
     await this.page.screenshot({
       path: this.screenshotPath,
     });
