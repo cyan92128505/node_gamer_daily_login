@@ -4,13 +4,11 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node ./src/main.js",
-    "create_env_on_github_action": "node ./scripts/create_env.js"
+    "start": "node ./src/main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.9.0",
     "dotenv": "^16.0.1",
     "jest": "^28.1.3",
     "puppeteer": "^15.4.0"
