@@ -4,7 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node ./src/main.js"
+    "start": "node ./src/main.js",
+    "create_env_on_github_action": "node ./scripts/create_env.js"
   },
   "author": "",
   "license": "ISC",
