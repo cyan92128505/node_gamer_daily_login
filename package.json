@@ -1,5 +1,5 @@
 {
-  "name": "node_gamer_dayly_login",
+  "name": "node_gamer_dayiy_login",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@actions/core": "^1.9.0",
     "dotenv": "^16.0.1",
     "jest": "^28.1.3",
     "puppeteer": "^15.4.0"
